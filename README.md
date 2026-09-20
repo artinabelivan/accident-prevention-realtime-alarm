@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Executive Summary
+## 1. Summary
 Traditional perimeter-security and hazard-alert systems function reactively (*post-breach*), generating alerts only after an individual has crossed into a hazardous zone (e.g., falling into a swimming pool or stepping onto transit tracks). 
 
 This project implements a proactive intervention model designed to evaluate accident probability *prior to impact*. By coupling high-frequency YOLO object tracking with a calibrated **sensory latency compensation model**, the pipeline predicts an individual's trajectory and executes multi-tiered warnings before a boundary is crossed.
@@ -28,9 +28,9 @@ Let $\Omega$ represent the bounded polygonal hazard zone (such as a swimming poo
 
 $$D(\vec{P}) = \text{dist}(\vec{P}, \partial\Omega) \cdot \text{sgn}(\vec{P} \notin \Omega)$$
 
-* **Safe State:** $D(\vec{P}_{\text{projected}}) > d_{\text{warning}}$
-* **Approaching Warning:** $d_{\text{critical}} < D(\vec{P}_{\text{projected}}) \le d_{\text{warning}}$
-* **Critical Collision Intervention:** $D(\vec{P}_{\text{projected}}) \le d_{\text{critical}} \quad \text{or} \quad D(\vec{P}_{\text{current}}) \le 0$
+* **Safe State:** $$D(\vec{P}_{\text{projected}}) > d_{\text{warning}}$
+* **Approaching Warning:** $$d_{\text{critical}} < D(\vec{P}_{\text{projected}}) \le d_{\text{warning}}$
+* **Critical Collision Intervention:** $$D(\vec{P}_{\text{projected}}) \le d_{\text{critical}} \quad \text{or} \quad D(\vec{P}_{\text{current}}) \le 0$
 
 ---
 
@@ -82,15 +82,4 @@ python realtime_collision_detector.py
 
 (Press q within the OpenCV visual display window to terminate the stream).
 
-4. Scroll down and click **Commit changes...** $\rightarrow$ **Commit changes**.
-
----
-
-### Step 5: Verify the Repository Link for Applications
-
-Once published, the complete project will be live at:
-`[https://github.com/artinabelivan/accident-prevention-realtime-alarm](https://github.com/artinabelivan/accident-prevention-realtime-alarm)`
-
-This URL directly substantiates the patent bullet on Artina's resume:
-> *"Patent: Systems to Detect and Alarm Probability of Accidents in Real Time (Provisional Patent Filed Sept. 2022) Developed algorithmic risk-detection framework modeling sensory latency and decision thresholds for collision intervention."*
 
