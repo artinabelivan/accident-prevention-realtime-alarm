@@ -19,14 +19,10 @@ In physical edge systems, real-time response times are constrained by sensory la
 
 $$\Delta t_{\text{latency}} = \Delta t_{\text{capture}} + \Delta t_{\text{inference}} + \Delta t_{\text{decision}}$$
 
-To compensate for this latency, the algorithm tracks human ground-contact coordinates $\vec{P}(t)$ and computes an exponentially smoothed instantaneous velocity vector $\vec{v}(t)$. The model continuously projects the predicted physical position:
-
-$$\vec{P}_{\text{projected}} = \vec{P}_{\text{current}} + \vec{v} \cdot \Delta t_{\text{latency}}$$
+To compensate for this latency, the algorithm tracks human ground-contact coordinates $\vec{P}(t)$ and computes an exponentially smoothed instantaneous velocity vector $\vec{v}(t)$. The model continuously projects the predicted physical position: $$\vec{P}_{\text{projected}} = \vec{P}_{\text{current}} + \vec{v} \cdot \Delta t_{\text{latency}}$$
 
 ### Perimeter Risk Evaluation
-Let $\Omega$ represent the bounded polygonal hazard zone (such as a swimming pool edge) and $\partial\Omega$ its perimeter. The signed Euclidean distance $D(\vec{P})$ from the subject's ground position to the boundary is defined by:
-
-$$D(\vec{P}) = \text{dist}(\vec{P}, \partial\Omega) \cdot \operatorname{sgn}(\vec{P} \notin \Omega)$$
+Let $\Omega$ represent the bounded polygonal hazard zone (such as a swimming pool edge) and $\partial\Omega$ its perimeter. The signed Euclidean distance $D(\vec{P})$ from the subject's ground position to the boundary is defined by: $$D(\vec{P}) = \text{dist}(\vec{P}, \partial\Omega) \cdot \operatorname{sgn}(\vec{P} \notin \Omega)$$
 
 * **Safe State:** $D(\vec{P}_{\text{projected}}) > d_{\text{warning}}$
 * **Approaching Warning:** $d_{\text{critical}} < D(\vec{P}_{\text{projected}}) \le d_{\text{warning}}$
@@ -82,6 +78,6 @@ python realtime_collision_detector.py
 
 (Press q within the OpenCV visual display window to terminate the stream).
 
-## 4. Academic Citation & Context
+## 5. Academic Citation & Context
 Developed as part of independent research on human-centered accident prevention and predictive decision support algorithms (Provisional Patent Filed Sept. 2022).
 
